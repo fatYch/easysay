@@ -1,2 +1,5 @@
 {
+    "usingComponents": {
+      "mp-dialog": "../components/dialog/dialog"
+    }
 }

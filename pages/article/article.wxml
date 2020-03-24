@@ -2,23 +2,39 @@
   <view class="page__bd">
 
     <view class="weui-article">
-      <view class="weui-article__h1">关于午餐准时通知</view>
-      <view class="weui-article__section">
+      <view class="weui-article__h1">{{article.title}}</view>
+
+
+      <view class="author" style="font-size:15px; color:#ff9900">
+        <text space="nbsp">{{article.createBy}}       {{article.createDate}}              </text>
+      </view>
+
+
+      <view class="weui-article__section" style="margin-top:20px">
         <view class="weui-article__section">
           <view class="weui-article__p">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            {{article.content}}
           </view>
         </view>
       </view>
+
+      <view class="">
+        <image class="icon" src="{{loveUrl}}" bindtap="loveIt"></image>
+        <image class="icon" src="{{complainUrl}}" bindtap="complain"></image>
+      </view>
     </view>
 
-    <button class="weui-btn weui-btn_primary">确定</button>
+          <mp-dialog title="举报" show="{{complainDialog}}" bindbuttontap="complainSelect" buttons="{{buttons}}">
+        <textarea class="weui-textarea" placeholder="请输入举报原因！" auto-height="true" maxlength="50" id="content" name="content"></textarea>
+      </mp-dialog>
+
+
   </view>
 
 
-  		<view class="weui-footer weui-footer_fixed-bottom">
-			<view class="weui-footer__text">2020 design by yaocanhong</view>
-		</view>
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">2020 design by yaocanhong</view>
+  </view>
 
 
 

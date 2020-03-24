@@ -26,12 +26,6 @@
         "text": "",
         "iconPath": "pages/images/article1.png",
         "selectedIconPath": "pages/images/article.png"
-      },
-      {
-        "pagePath": "pages/article/article",
-        "text": "",
-        "iconPath": "pages/images/my1.png",
-        "selectedIconPath": "pages/images/my.png"
       }
     ]
   },
