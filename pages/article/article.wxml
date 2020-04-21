@@ -1,14 +1,13 @@
 <view class="page">
   <view class="page__bd">
 
+    <!--文章内容 -->
     <view class="weui-article">
       <view class="weui-article__h1">{{article.title}}</view>
 
-
-      <view class="author" style="font-size:15px; color:#ff9900">
+      <view class="author" style="font-size:15px; color:#33CC99">
         <text space="nbsp">{{article.createBy}}       {{article.createDate}}              </text>
       </view>
-
 
       <view class="weui-article__section" style="margin-top:20px">
         <view class="weui-article__section">
@@ -18,23 +17,78 @@
         </view>
       </view>
 
+      <!--送花-->
       <view class="">
         <image class="icon" src="{{loveUrl}}" bindtap="loveIt"></image>
         <image class="icon" src="{{complainUrl}}" bindtap="complain"></image>
       </view>
     </view>
 
-          <mp-dialog title="举报" show="{{complainDialog}}" bindbuttontap="complainSelect" buttons="{{buttons}}">
-        <textarea class="weui-textarea" placeholder="请输入举报原因！" auto-height="true" maxlength="50" id="content" name="content"></textarea>
-      </mp-dialog>
+    <!--举报-->
+    <!-- <mp-dialog title="举报" show="{{complainDialog}}" bindbuttontap="complainSelect" buttons="{{buttons}}" style="margin-top:20px">
+      <textarea class="weui-textarea" placeholder="请输入举报原因！" auto-height="true" maxlength="50" id="content" name="content" bindinput="getComplainContent"></textarea>
+    </mp-dialog> -->
 
+    <!-- 举报-->
+    <view class="fadeIn" wx:if="{{complainDialog}}">
+      <view class="weui-mask"></view>
+      <view class="weui-dialog weui-skin_android">
+        <view class="weui-dialog__hd">
+          <strong class="weui-dialog__title">举报</strong>
+        </view>
+        <view class="weui-dialog__bd">
+          <textarea class="weui-textarea" placeholder="请输入举报原因！" auto-height="true" maxlength="50" id="content" name="content" 
+           auto-focus="true" show-confirm-bar="false" cursor-spacing="100px" bindinput="getComplainContent"></textarea>
+        </view>
+        <view class="weui-dialog__ft">
+          <a class="weui-dialog__btn weui-dialog__btn_default" id="cancel" bindtap="complainSelect">取消</a>
+          <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="complainSelect" id="confirm" name="status">确定</a>
+        </view>
+      </view>
+    </view>
 
+    <!-- 文章评论 -->
+    <view class="weui-panel">
+      <view class="weui-panel__hd">评论区</view>
+      <view class="weui-panel__bd">
+        <block wx:for="{{commentList}}" wx:key="k">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__desc">{{item.content}}</view>
+          <view class="weui-media-box__info">
+            <view class="weui-media-box__info__meta">{{item.createBy}}</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.createDate}}</view>
+          </view>
+        </view>
+        </block>
+      </view>
+    </view>
   </view>
 
 
-  <view class="weui-footer weui-footer_fixed-bottom">
+   <!--评论按钮-->
+    <image class="addComentButton icon" src="{{addCommentUrl}}" bindtap="commentDialog"></image>
+
+    <!-- 发表评论-->
+    <view class="fadeIn" wx:if="{{commentDialog}}">
+      <view class="weui-mask"></view>
+      <view class="weui-dialog weui-skin_android">
+        <view class="weui-dialog__hd">
+          <strong class="weui-dialog__title">评论</strong>
+        </view>
+        <view class="weui-dialog__bd">
+          <textarea class="weui-textarea" placeholder="" auto-height="true" maxlength="50" id="content" name="content" auto-focus="true" cursor-spacing="100px" show-confirm-bar="false" bindinput="getComplainContent"></textarea>
+        </view>
+        <view class="weui-dialog__ft">
+          <a class="weui-dialog__btn weui-dialog__btn_default" id="cancel" bindtap="commentSelect">取消</a>
+          <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="commentSelect" id="confirm" name="status">确定</a>
+        </view>
+      </view>
+    </view>
+
+
+  <!-- <view class="weui-footer weui-footer_fixed-bottom">
     <view class="weui-footer__text">2020 design by yaocanhong</view>
-  </view>
+  </view> -->
 
 
 

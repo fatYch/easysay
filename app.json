@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/say/say",
-    "pages/article/article"
+    "pages/article/article",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -22,10 +23,10 @@
         "selectedIconPath": "pages/images/index.png"
       },
       {
-        "pagePath": "pages/say/say",
+        "pagePath": "pages/my/my",
         "text": "",
-        "iconPath": "pages/images/article1.png",
-        "selectedIconPath": "pages/images/article.png"
+        "iconPath": "pages/images/my1.png",
+        "selectedIconPath": "pages/images/my.png"
       }
     ]
   },

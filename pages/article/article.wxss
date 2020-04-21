@@ -1,5 +1,25 @@
-.placeholder{margin:5px;padding:0 10px;text-align:center;background-color:var(--weui-BG-1);height:2.3em;line-height:2.3em;color:var(--weui-FG-1)}
+.placeholder {
+  margin: 5px;
+  padding: 0 10px;
+  text-align: center;
+  background-color: var(--weui-BG-1);
+  height: 2.3em;
+  line-height: 2.3em;
+  color: var(--weui-FG-1);
+}
 
-.icon{
-  margin-left: 10px;margin-right: 10px; width:30px;height:30px;
+.icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+}
+
+.addComentButton {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 70px;
+  right: 20px;
+  font-size: 24rpx;
 }
